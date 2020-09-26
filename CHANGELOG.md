@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.3](https://github.com/extra2000/nodejs-devbox/compare/v1.0.2...v1.0.3) (2020-09-26)
+
+
+### Documentations
+
+* **README:** Add badges ([c613a81](https://github.com/extra2000/nodejs-devbox/commit/c613a81fbc41f6dcf338d0d9ccb049bf0a8a035f))
+
 ### [1.0.2](https://github.com/extra2000/nodejs-devbox/compare/v1.0.1...v1.0.2) (2020-09-26)
 
 
