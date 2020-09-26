@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://github.com/extra2000/nodejs-devbox/compare/v1.0.3...v1.0.4) (2020-09-26)
+
+
+### Continuous Integrations
+
+* **travis:** Add Slack notifications ([0afe1ce](https://github.com/extra2000/nodejs-devbox/commit/0afe1ce206a846801f6ff98829c7900ffb109cbd))
+
 ### [1.0.3](https://github.com/extra2000/nodejs-devbox/compare/v1.0.2...v1.0.3) (2020-09-26)
 
 
