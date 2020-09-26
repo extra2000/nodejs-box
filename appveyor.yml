@@ -1,0 +1,18 @@
+os: Ubuntu
+platform:
+  - x64
+install:
+  - sudo apt-get update && sudo apt-get install -y bridge-utils dnsmasq-base ebtables libvirt-bin libvirt-dev qemu-kvm qemu-utils ruby-dev
+  - sudo wget -nv https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.deb
+  - sudo dpkg -i vagrant_2.2.9_x86_64.deb
+  - sudo vagrant plugin install vagrant-libvirt vagrant-scp vagrant-reload vagrant-vbguest
+  - git submodule init
+  - git submodule update
+build_script:
+  - sudo vagrant up --provider=libvirt nodejs-ubuntu1804
+  - sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls node
+  - sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls sampleapps
+  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/math && npm install"
+  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/math && npm run dev"
+  - sudo vagrant destroy --force nodejs-ubuntu1804
+test: off
