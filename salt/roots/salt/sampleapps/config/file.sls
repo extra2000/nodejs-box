@@ -7,10 +7,10 @@
     - group: {{ pillar['sampleapps']['user']['group'] }}
     - makedirs: false
 
-sampleapps-math-files-present:
+sampleapps-files-present:
   file.recurse:
-    - name: /opt/sampleapps/math
-    - source: salt://sampleapps/files/math
+    - name: /opt/sampleapps/apps
+    - source: salt://sampleapps/files/apps
     - user: {{ pillar['sampleapps']['user']['name'] }}
     - group: {{ pillar['sampleapps']['user']['group'] }}
     - template: jinja
