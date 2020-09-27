@@ -19,6 +19,7 @@ jobs:
       script:
         - travis_wait sudo vagrant up --provider=libvirt nodejs-ubuntu1804
         - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.highstate
+        - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls sampleapps
         - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/math && npm install"
         - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/math && npm run dev"
         - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/zeromq-pushpull && npm install"
