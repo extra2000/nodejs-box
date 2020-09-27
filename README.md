@@ -21,7 +21,7 @@ $ cd nodejs-devbox
 To create devbox and required development tools:
 ```
 $ vagrant up --provider=libvirt nodejs-ubuntu1804
-$ vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls node
+$ vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.highstate
 ```
 
 
