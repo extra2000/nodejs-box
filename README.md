@@ -22,15 +22,9 @@ To create devbox and required development tools:
 ```
 $ vagrant up --provider=libvirt nodejs-ubuntu1804
 $ vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls node
-$ vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls sampleapps
 ```
 
 
-## Running examples
+## Sample apps
 
-```
-$ vagrant ssh nodejs-ubuntu1804
-$ cd /opt/sampleapps/math
-$ npm install
-$ npm run dev
-```
+* [math](docs/sampleapps/math.md)
