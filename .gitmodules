@@ -1,3 +1,6 @@
 [submodule "salt/roots/formulas/node-formula"]
 	path = salt/roots/formulas/node-formula
 	url = https://github.com/saltstack-formulas/node-formula.git
+[submodule "salt/roots/formulas/java-formula"]
+	path = salt/roots/formulas/java-formula
+	url = https://github.com/extra2000/java-formula.git
