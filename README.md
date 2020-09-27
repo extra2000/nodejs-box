@@ -28,3 +28,4 @@ $ vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.highstate
 ## Sample apps
 
 * [math](docs/sampleapps/math.md)
+* [zeromq-pushpull](docs/sampleapps/zeromq-pushpull.md)
