@@ -1,5 +1,6 @@
 base:
   '*':
+    - podman
     - node
     - java
     - zookeeper
