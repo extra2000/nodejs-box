@@ -2,3 +2,4 @@ base:
   '*':
     - node
     - java
+    - kafka
