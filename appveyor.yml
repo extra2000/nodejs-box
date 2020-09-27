@@ -10,9 +10,10 @@ install:
   - git submodule update
 build_script:
   - sudo vagrant up --provider=libvirt nodejs-ubuntu1804
-  - sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls node
-  - sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls sampleapps
-  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/math && npm install"
-  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/math && npm run dev"
+  - sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.highstate
+  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/math && npm install"
+  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/math && npm run dev"
+  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/zeromq-pushpull && npm install"
+  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/kafka-pubsub && npm install"
   - sudo vagrant destroy --force nodejs-ubuntu1804
 test: off
