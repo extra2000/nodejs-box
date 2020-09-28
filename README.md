@@ -38,3 +38,4 @@ $ /opt/kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --bootstrap-server localho
 * [math](docs/sampleapps/math.md)
 * [zeromq-pushpull](docs/sampleapps/zeromq-pushpull.md)
 * [kafka-pubsub](docs/sampleapps/kafka-pubsub.md)
+* [kong-podman](docs/sampleapps/kong-podman.md)
