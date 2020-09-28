@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/extra2000/nodejs-devbox/compare/v1.2.0...v1.3.0) (2020-09-28)
+
+
+### Features
+
+* **sampleapps:** Add Kong with Podman ([82f9843](https://github.com/extra2000/nodejs-devbox/commit/82f9843a89005b2beb835935c591b5f086574f58))
+
 ## [1.2.0](https://github.com/extra2000/nodejs-devbox/compare/v1.1.0...v1.2.0) (2020-09-28)
 
 
