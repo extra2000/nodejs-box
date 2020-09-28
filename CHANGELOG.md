@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/extra2000/nodejs-devbox/compare/v1.1.0...v1.2.0) (2020-09-28)
+
+
+### Features
+
+* **submodules:** Add Podman Formula ([#3](https://github.com/extra2000/nodejs-devbox/issues/3)) ([a371426](https://github.com/extra2000/nodejs-devbox/commit/a3714260e2902426cecb1f0d04e8ba8aa4ee2b94))
+
 ## [1.1.0](https://github.com/extra2000/nodejs-devbox/compare/v1.0.4...v1.1.0) (2020-09-27)
 
 
