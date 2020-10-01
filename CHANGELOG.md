@@ -1,5 +1,28 @@
 # Changelog
 
+### [1.3.1](https://github.com/extra2000/nodejs-box/compare/v1.3.0...v1.3.1) (2020-10-01)
+
+
+### Documentations
+
+* **CHANGELOG:** Rename nodejs-devbox to nodejs-box ([ef53cd6](https://github.com/extra2000/nodejs-box/commit/ef53cd6ea924428bc0e2ea1465813bce55cb1d51))
+* **README:** Rename nodejs-devbox to nodejs-box ([4292796](https://github.com/extra2000/nodejs-box/commit/429279689f9ea2ba9837f97dc5db782acfee063b))
+
+
+### Continuous Integrations
+
+* **semantic-release:** Add rc, beta, and alpha release channels ([a0bd606](https://github.com/extra2000/nodejs-box/commit/a0bd606ccc09d54c58a1a57bde0938988598b79d))
+* **semantic-release:** Remove invalid release branches ([df94cf3](https://github.com/extra2000/nodejs-box/commit/df94cf3e581f7a7df2da12bdea5c6e4613c94bf4))
+* **semantic-release:** Remove README scope from docs ([7b67f52](https://github.com/extra2000/nodejs-box/commit/7b67f523c4f7dbcd35c484769408fb89b590045e))
+
+
+### Maintenance
+
+* **java-formula:** Patch updates ([8a8789d](https://github.com/extra2000/nodejs-box/commit/8a8789d901d2d7c7996649cdbd0b5c0f6ee4e810))
+* **kafka-formula:** Patch updates ([41a690d](https://github.com/extra2000/nodejs-box/commit/41a690d62d189f505450f1137814ce6ba2151eb0))
+* **podman-formula:** Patch updates ([94f71ef](https://github.com/extra2000/nodejs-box/commit/94f71effb7cb047b7ebeb80623fa91e024bec3e5))
+* **zookeeper-formula:** Patch updates ([265f1ff](https://github.com/extra2000/nodejs-box/commit/265f1ff32837e76dcbdfea8fb1935a500229aafc))
+
 ## [1.3.0](https://github.com/extra2000/nodejs-box/compare/v1.2.0...v1.3.0) (2020-09-28)
 
 
