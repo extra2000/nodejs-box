@@ -1,5 +1,20 @@
 # Changelog
 
+### [1.3.3](https://github.com/extra2000/nodejs-box/compare/v1.3.2...v1.3.3) (2020-10-04)
+
+
+### Continuous Integrations
+
+* **semantic-release:** Fix patch updates with BREAKING CHANGE doesn't trigger major release ([50459b8](https://github.com/extra2000/nodejs-box/commit/50459b85cf4ac00e354d6f37a03f779bd7500337))
+
+
+### Maintenance
+
+* **java-formula:** Patch updates ([b548634](https://github.com/extra2000/nodejs-box/commit/b54863462b842bdfec82e1188c0ea953957bbadc))
+* **kafka-formula:** Patch updates ([80538d8](https://github.com/extra2000/nodejs-box/commit/80538d834c5502278cac8970706da569764922b4))
+* **podman-formula:** Patch updates ([f825224](https://github.com/extra2000/nodejs-box/commit/f82522465a6f27eccd9dc9ddd6ec6f01dc56aa24))
+* **zookeeper-formula:** Patch updates ([63f987e](https://github.com/extra2000/nodejs-box/commit/63f987e7c1d247880a3b0978480c131cf1e49cc8))
+
 ### [1.3.2](https://github.com/extra2000/nodejs-box/compare/v1.3.1...v1.3.2) (2020-10-02)
 
 
