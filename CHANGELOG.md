@@ -1,5 +1,24 @@
 # Changelog
 
+## [2.0.0](https://github.com/extra2000/nodejs-box/compare/v1.3.3...v2.0.0) (2020-10-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* SaltStack Formulas have been removed except Podman Formula. Also sample apps are now using rootless Podman Pods.
+* **vagrant:** Vagrant box have been renamed which affects build and deployment instructions.
+
+### Performance Improvements
+
+* **podman-formula:** Update to v2.0.0 which removes podman-compose installations ([64ea43a](https://github.com/extra2000/nodejs-box/commit/64ea43af7ce9af79d41afd7df1100650cba350d9))
+
+
+### Code Refactoring
+
+* **README:** Move sample apps documentations into their directory as README.md ([1f2ccf7](https://github.com/extra2000/nodejs-box/commit/1f2ccf7427108151fee631bb5fbe2ef9ff0c58e7))
+* Change deployments from SaltStack Formulas to rootless Podman Pod ([5632d76](https://github.com/extra2000/nodejs-box/commit/5632d76a800ce6d10ce327c710e2734306ff8623))
+* **vagrant:** Rename vagrant box ([fd4cd1e](https://github.com/extra2000/nodejs-box/commit/fd4cd1e425485bae067e3735da21ebae1d7deed0))
+
 ### [1.3.3](https://github.com/extra2000/nodejs-box/compare/v1.3.2...v1.3.3) (2020-10-04)
 
 
