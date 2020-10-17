@@ -27,7 +27,7 @@ $ vagrant ssh nodejs-box -- sudo salt-call state.highstate
 
 ## Sample apps
 
-* [math](docs/sampleapps/math.md)
-* [zeromq-pushpull](docs/sampleapps/zeromq-pushpull.md)
-* [kafka-pubsub](docs/sampleapps/kafka-pubsub.md)
-* [kong-podman](docs/sampleapps/kong-podman.md)
+* [salt/roots/salt/sampleapps/files/apps/math/](salt/roots/salt/sampleapps/files/apps/math/)[README.md](salt/roots/salt/sampleapps/files/apps/math/README.md)
+* [salt/roots/salt/sampleapps/files/apps/zeromq-pushpull/](salt/roots/salt/sampleapps/files/apps/zeromq-pushpull/)[README.md](salt/roots/salt/sampleapps/files/apps/zeromq-pushpull/README.md)
+* [salt/roots/salt/sampleapps/files/apps/kafka-pubsub/](salt/roots/salt/sampleapps/files/apps/kafka-pubsub/)[README.md](salt/roots/salt/sampleapps/files/apps/kafka-pubsub/README.md)
+* [salt/roots/salt/sampleapps/files/apps/kong-podman/](salt/roots/salt/sampleapps/files/apps/kong-podman/)[README.md](salt/roots/salt/sampleapps/files/apps/kong-podman/README.md)
