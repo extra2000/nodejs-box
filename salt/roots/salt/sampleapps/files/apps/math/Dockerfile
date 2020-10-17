@@ -20,4 +20,4 @@ RUN bash /opt/nvm-installer.sh
 COPY ./project /srv/project
 WORKDIR /srv/project
 RUN npm install
-ENTRYPOINT npm run webservice
+ENTRYPOINT npm run dev

@@ -46,6 +46,6 @@ app.get('/api/v1/clients/:id', (req, res) => {
   res.json(clients[req.params.id]);
 });
 
-app.listen(10000, () => {
+app.listen(8000, () => {
   console.log(`Server started!`);
 });

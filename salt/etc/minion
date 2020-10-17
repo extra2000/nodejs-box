@@ -393,10 +393,6 @@ file_roots:
   base:
     - /srv/salt
     - /srv/formulas/podman-formula
-    - /srv/formulas/node-formula
-    - /srv/formulas/java-formula
-    - /srv/formulas/kafka-formula
-    - /srv/formulas/zookeeper-formula
 
 # By default, the Salt fileserver recurses fully into all defined environments
 # to attempt to find files. To limit this behavior so that the fileserver only

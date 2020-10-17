@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: webservice-pod
+spec:
+  restartPolicy: Never
+  containers:
+  - name: webservice
+    image: localhost/extra2000/webservice:latest
+    workingDir: /srv/project
+    ports:
+    - containerPort: 8000
+      hostPort: 10000
+      hostIP: 0.0.0.0
+      protocol: tcp

@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres-pod
+spec:
+  restartPolicy: Never
+  containers:
+  - name: postgres
+    image: docker.io/library/postgres:13.0
+    workingDir: /srv/project
+    ports:
+    - containerPort: 5432
+      hostPort: 5432
+      hostIP: 0.0.0.0
+      protocol: tcp
+    env:
+    - name: POSTGRES_PASSWORD
+      value: abcde12345
+    volumeMounts:
+    - mountPath: /docker-entrypoint-initdb.d/initdb.sql:ro,z
+      name: initdb
+  volumes:
+  - name: initdb
+    hostPath:
+      path: /opt/sampleapps/apps/kong-podman/initdb.sql

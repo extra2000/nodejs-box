@@ -1,13 +1,15 @@
 const kafka = require('kafka-node');
 const bp = require('body-parser');
-const config = require('../config');
+
+let kafkaHost = '10.77.1.1:9092';
+let kafkaTopic = 'testingtopic';
 
 try {
   const Consumer = kafka.Consumer;
-  const client = new kafka.KafkaClient(config.kafka_server);
+  const client = new kafka.KafkaClient({kafkaHost: kafkaHost});
   let consumer = new Consumer(
     client,
-    [{ topic: config.kafka_topic, partition: 0 }],
+    [{ topic: kafkaTopic, partition: 0 }],
     {
       autoCommit: true,
       fetchMaxWaitMs: 1000,
@@ -16,7 +18,7 @@ try {
       fromOffset: false
     }
   );
-  consumer.on('message', async function(message: any) {
+  consumer.on('message', function(message: any) {
     console.log('here');
     console.log(
       'kafka-> ',

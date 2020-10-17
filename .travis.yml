@@ -17,14 +17,21 @@ jobs:
         - sudo dpkg -i vagrant_2.2.9_x86_64.deb
         - sudo vagrant plugin install vagrant-libvirt vagrant-scp vagrant-reload
       script:
-        - travis_wait sudo vagrant up --provider=libvirt nodejs-ubuntu1804
-        - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.highstate
-        - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls sampleapps
-        - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/math && npm install"
-        - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/math && npm run dev"
-        - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/zeromq-pushpull && npm install"
-        - travis_wait sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/kafka-pubsub && npm install"
-        - sudo vagrant destroy --force nodejs-ubuntu1804
+        - travis_wait sudo vagrant up --provider=libvirt nodejs-box
+        - travis_wait sudo vagrant ssh nodejs-box -- sudo salt-call state.highstate
+        - travis_wait sudo vagrant ssh nodejs-box -- sudo salt-call state.sls sampleapps
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/math && podman build -t extra2000/mathapp:latest ."
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/math && podman run --rm localhost/extra2000/mathapp"
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/math && podman pod rm --force --all"
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/zeromq-pushpull && podman build -t extra2000/zeromq-pushpull:latest ."
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/zeromq-pushpull && podman play kube zeromq-pushpull-pod.yaml"
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/zeromq-pushpull && podman pod rm --force --all"
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube kafka-pod.yaml"
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman build -t extra2000/prodcon:latest ."
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube producer-pod.yaml"
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube consumer-pod.yaml"
+        - travis_wait sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman pod rm --force --all"
+        - sudo vagrant destroy --force nodejs-box
 
     - stage: release
       install:

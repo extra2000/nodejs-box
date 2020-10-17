@@ -9,12 +9,19 @@ install:
   - git submodule init
   - git submodule update
 build_script:
-  - sudo vagrant up --provider=libvirt nodejs-ubuntu1804
-  - sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.highstate
-  - sudo vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls sampleapps
-  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/math && npm install"
-  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/math && npm run dev"
-  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/zeromq-pushpull && npm install"
-  - sudo vagrant ssh nodejs-ubuntu1804 -- "cd /opt/sampleapps/apps/kafka-pubsub && npm install"
-  - sudo vagrant destroy --force nodejs-ubuntu1804
+  - sudo vagrant up --provider=libvirt nodejs-box
+  - sudo vagrant ssh nodejs-box -- sudo salt-call state.highstate
+  - sudo vagrant ssh nodejs-box -- sudo salt-call state.sls sampleapps
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/math && podman build -t extra2000/mathapp:latest ."
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/math && podman run --rm localhost/extra2000/mathapp"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/math && podman pod rm --force --all"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/zeromq-pushpull && podman build -t extra2000/zeromq-pushpull:latest ."
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/zeromq-pushpull && podman play kube zeromq-pushpull-pod.yaml"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/zeromq-pushpull && podman pod rm --force --all"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube kafka-pod.yaml"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman build -t extra2000/prodcon:latest ."
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube producer-pod.yaml"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube consumer-pod.yaml"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman pod rm --force --all"
+  - sudo vagrant destroy --force nodejs-box
 test: off

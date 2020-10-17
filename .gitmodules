@@ -1,15 +1,3 @@
-[submodule "salt/roots/formulas/node-formula"]
-	path = salt/roots/formulas/node-formula
-	url = https://github.com/saltstack-formulas/node-formula.git
-[submodule "salt/roots/formulas/java-formula"]
-	path = salt/roots/formulas/java-formula
-	url = https://github.com/extra2000/java-formula.git
-[submodule "salt/roots/formulas/zookeeper-formula"]
-	path = salt/roots/formulas/zookeeper-formula
-	url = https://github.com/extra2000/zookeeper-formula.git
-[submodule "salt/roots/formulas/kafka-formula"]
-	path = salt/roots/formulas/kafka-formula
-	url = https://github.com/extra2000/kafka-formula.git
 [submodule "salt/roots/formulas/podman-formula"]
 	path = salt/roots/formulas/podman-formula
 	url = https://github.com/extra2000/podman-formula.git

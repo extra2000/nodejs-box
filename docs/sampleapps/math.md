@@ -1,9 +1,9 @@
 # Sample apps: Math
 
 ```
-$ vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.sls sampleapps
-$ vagrant ssh nodejs-ubuntu1804
+$ vagrant ssh nodejs-box -- sudo salt-call state.sls sampleapps
+$ vagrant ssh nodejs-box
 $ cd /opt/sampleapps/apps/math
-$ npm install
-$ npm run dev
+$ podman build -t extra2000/mathapp:latest .
+$ podman run --rm localhost/extra2000/mathapp
 ```

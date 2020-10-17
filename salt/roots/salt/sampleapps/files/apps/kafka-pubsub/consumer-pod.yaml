@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: consumer-pod
+spec:
+  restartPolicy: Never
+  containers:
+  - name: consumer
+    image: localhost/extra2000/prodcon:latest
+    command: ['npm', 'run', 'consumer']
+    workingDir: /srv/project

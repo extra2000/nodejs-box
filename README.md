@@ -18,18 +18,10 @@ $ cd nodejs-box
 
 ## Preparing environment
 
-To create devbox and required development tools:
+To create devbox and apply required states such as podman and bridge network for inter-pod communications:
 ```
-$ vagrant up --provider=libvirt nodejs-ubuntu1804
-$ vagrant ssh nodejs-ubuntu1804 -- sudo salt-call state.highstate
-```
-
-To test Kafka installations:
-```
-$ vagrant ssh nodejs-ubuntu1804
-$ /opt/kafka_2.13-2.6.0/bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic TutorialTopic
-$ echo "Hello, World" | /opt/kafka_2.13-2.6.0/bin/kafka-console-producer.sh --broker-list localhost:9092 --topic TutorialTopic > /dev/null
-$ /opt/kafka_2.13-2.6.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic TutorialTopic --from-beginning
+$ vagrant up --provider=libvirt
+$ vagrant ssh nodejs-box -- sudo salt-call state.highstate
 ```
 
 
