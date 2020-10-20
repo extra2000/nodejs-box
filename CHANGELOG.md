@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.1](https://github.com/extra2000/nodejs-box/compare/v2.0.0...v2.0.1) (2020-10-20)
+
+
+### Fixes
+
+* **podman-formula:** Update to v2.0.1 which fixes namespace error when pulling image ([24f0b71](https://github.com/extra2000/nodejs-box/commit/24f0b71f24b0ddc4b9a438396a73e7d7c5dbbd61))
+
 ## [2.0.0](https://github.com/extra2000/nodejs-box/compare/v1.3.3...v2.0.0) (2020-10-17)
 
 
