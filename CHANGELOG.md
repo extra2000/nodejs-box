@@ -1,5 +1,42 @@
 # Changelog
 
+## [3.0.0-alpha.1](https://github.com/extra2000/nodejs-box/compare/v2.0.1...v3.0.0-alpha.1) (2020-11-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* **vagrant:** Required Vagrant file has been removed and user is required to rename one of the Vagrant file.
+* **vagrant:** HyperV provider has been removed because Fedora 32 doesn't provide official image for HyperV.
+
+### Features
+
+* **podman-formula:** Update to [v2.1.0-alpha.1](https://github.com/extra2000/podman-formula/releases/tag/v2.1.0-alpha.1) ([31bd784](https://github.com/extra2000/nodejs-box/commit/31bd784d8484694fa9eed2a8a214d8d25ce4b4af))
+* **salt:** Add `swapoff` to disable swap ([f212c5e](https://github.com/extra2000/nodejs-box/commit/f212c5e4fac1651164681eaa51523a4e8f75bb0c))
+* **salt.bridgenet:** Add support for Debian, Ubuntu, and SUSE families ([c3c04b8](https://github.com/extra2000/nodejs-box/commit/c3c04b86acdc3222819359735962908cd0d84ab1))
+* **vagrant:** Add Debian 10 `x86_64` box ([2a58f42](https://github.com/extra2000/nodejs-box/commit/2a58f4282ac85c5013baa0b8d0d341394fd474d1))
+* **vagrant:** Add openSUSE Leap 15.2 `x86_64` box ([f5ba354](https://github.com/extra2000/nodejs-box/commit/f5ba3547b132ac1198fc62f9708efdfd0a5560fe))
+* **vagrant:** Add openSUSE Tumbleweed `x86_64` box ([dd87aa6](https://github.com/extra2000/nodejs-box/commit/dd87aa6300be9b785098d4c666785a474913c917))
+* **vagrant:** Add Ubuntu 20.04 `x86_64` box ([29d9a1a](https://github.com/extra2000/nodejs-box/commit/29d9a1a746acdf01abf97da164e4e23fd7b91358))
+* **vagrant:** Allow user to customize Vagrant box without affecting commit ([f51ec33](https://github.com/extra2000/nodejs-box/commit/f51ec334f929c5aa92b4d51f49f141820369126d))
+* **vagrant:** Change OS from Centos 7 to Fedora 32 which has built-in Podman 2.x ([0a89679](https://github.com/extra2000/nodejs-box/commit/0a896790ae3f80a08c95e682fb4d32e270dc7b89))
+
+
+### Fixes
+
+* **sampleapps.kong-podman:** Remove `workingDir` in YAML file ([d476144](https://github.com/extra2000/nodejs-box/commit/d4761449f0d32da3ae5cf197fd660352a28917a2))
+* Remove `:latest` label from YAML files ([aa276a3](https://github.com/extra2000/nodejs-box/commit/aa276a392cd06c89542f1681fbaa069175f24569))
+
+
+### Documentations
+
+* **README:** Add instruction to rename example Vagrant box ([5a08455](https://github.com/extra2000/nodejs-box/commit/5a08455b7c17ad01091c7024e2e55ef937bff078))
+* **README:** Rename container name due to Podman 2.x ([d1d8eb2](https://github.com/extra2000/nodejs-box/commit/d1d8eb2117cd6a7b455905718cdc1daf08d632f0))
+
+
+### Continuous Integrations
+
+* Add copy Vagrant example file ([95ce63e](https://github.com/extra2000/nodejs-box/commit/95ce63e23fdd5678a6928f7b39c39d52520780cf))
+
 ### [2.0.1](https://github.com/extra2000/nodejs-box/compare/v2.0.0...v2.0.1) (2020-10-20)
 
 
