@@ -10,8 +10,8 @@ $ podman play kube zeromq-pushpull-pod.yaml
 
 View logs:
 ```
-$ podman logs producer
-$ podman logs worker
+$ podman logs zeromq-pushpull-pod-producer
+$ podman logs zeromq-pushpull-pod-worker
 ```
 
 To clean up:

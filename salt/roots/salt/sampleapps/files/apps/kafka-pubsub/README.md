@@ -31,8 +31,8 @@ $ podman play kube consumer-pod.yaml
 
 See logs:
 ```
-$ podman logs producer
-$ podman logs consumer
+$ podman logs producer-pod-producer
+$ podman logs consumer-pod-consumer
 ```
 
 
