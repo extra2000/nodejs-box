@@ -18,6 +18,11 @@ $ cd nodejs-box
 
 ## Preparing environment
 
+Rename example box:
+```
+$ cp -v vagrant/Vagrantfile.nodejs-box.fedora-32.x86_64.example vagrant/Vagrantfile.nodejs-box
+```
+
 To create devbox and apply required states such as podman and bridge network for inter-pod communications:
 ```
 $ vagrant up --provider=libvirt
