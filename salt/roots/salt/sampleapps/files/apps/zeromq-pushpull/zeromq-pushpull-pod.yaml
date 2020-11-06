@@ -6,7 +6,7 @@ spec:
   restartPolicy: Never
   containers:
   - name: producer
-    image: localhost/extra2000/zeromq-pushpull:latest
+    image: localhost/extra2000/zeromq-pushpull
     command: ['npm', 'run', 'producer']
     workingDir: /srv/project
     ports:
@@ -15,6 +15,6 @@ spec:
       hostIP: 0.0.0.0
       protocol: tcp
   - name: worker
-    image: localhost/extra2000/zeromq-pushpull:latest
+    image: localhost/extra2000/zeromq-pushpull
     command: ['npm', 'run', 'worker']
     workingDir: /srv/project

@@ -6,7 +6,7 @@ spec:
   restartPolicy: Never
   containers:
   - name: webservice
-    image: localhost/extra2000/webservice:latest
+    image: localhost/extra2000/webservice
     workingDir: /srv/project
     ports:
     - containerPort: 8000

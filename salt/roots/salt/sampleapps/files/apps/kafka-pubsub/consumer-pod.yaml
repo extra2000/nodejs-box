@@ -6,6 +6,6 @@ spec:
   restartPolicy: Never
   containers:
   - name: consumer
-    image: localhost/extra2000/prodcon:latest
+    image: localhost/extra2000/prodcon
     command: ['npm', 'run', 'consumer']
     workingDir: /srv/project
