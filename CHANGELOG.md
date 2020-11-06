@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.0-alpha.2](https://github.com/extra2000/nodejs-box/compare/v3.0.0-alpha.1...v3.0.0-alpha.2) (2020-11-06)
+
+
+### Features
+
+* **vagrant:** Add openSUSE Leap 15.2 `aarch64` box ([c087a58](https://github.com/extra2000/nodejs-box/commit/c087a58030c4ff653cc74a8bca9395e84b27f73a))
+* **vagrant:** Add openSUSE Tumbleweed `aarch64` box ([8067a3c](https://github.com/extra2000/nodejs-box/commit/8067a3c20c57b18a2d97ceba8283963b9404d5a2))
+
 ## [3.0.0-alpha.1](https://github.com/extra2000/nodejs-box/compare/v2.0.1...v3.0.0-alpha.1) (2020-11-06)
 
 
