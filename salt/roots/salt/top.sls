@@ -1,4 +1,5 @@
 base:
   '*':
+    - swapoff
     - podman
     - bridgenet
