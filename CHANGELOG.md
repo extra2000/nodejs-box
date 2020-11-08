@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.0-alpha.3](https://github.com/extra2000/nodejs-box/compare/v3.0.0-alpha.2...v3.0.0-alpha.3) (2020-11-08)
+
+
+### Features
+
+* **vagrant:** Add openSUSE Leap 15.2 `aarch64` KVM box ([c7d9c3f](https://github.com/extra2000/nodejs-box/commit/c7d9c3f606dbd5827ec062a527f9e07d846435f1))
+* **vagrant:** Add openSUSE Tumbleweed `aarch64` KVM box ([47b2e98](https://github.com/extra2000/nodejs-box/commit/47b2e989130d06dd4a1b14c58b0b8f4af8725c96))
+
 ## [3.0.0-alpha.2](https://github.com/extra2000/nodejs-box/compare/v3.0.0-alpha.1...v3.0.0-alpha.2) (2020-11-06)
 
 
