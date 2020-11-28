@@ -32,13 +32,9 @@ Vagrant.configure("2") do |config|
       v.disk_bus = "virtio"
       v.nic_model_type = "virtio-net-pci"
       v.nested = false
-      v.cpu_mode = "custom"
-      v.cpu_model = "cortex-a72"
-      v.cpu_fallback = "allow"
       v.graphics_type = "none"
-      v.machine_type = "virt"
       v.machine_arch = "aarch64"
-      v.driver = "qemu"
+      v.driver = "kvm"
       v.autostart = false
 
       salt_provision_nodejs_box override
