@@ -6,6 +6,16 @@ network-manager:
   pkg.installed
 {% endif %}
 
+{% if grains['os_family'] == 'Arch' %}
+networkmanager:
+  pkg.installed
+
+service-NetworkManager-running:
+  service.running:
+    - name: NetworkManager
+    - enable: true
+{% endif %}
+
 {% if grains['os'] == 'Ubuntu' %}
 # Fix "device strictly unmanaged" issue
 /etc/NetworkManager/conf.d/10-globally-managed-devices.conf:
@@ -31,6 +41,7 @@ service-NetworkManager-running:
     - enable: true
 {% endif %}
 
+# Note on Arch families, "nmcli conn up br0" will fail but will be automatically enabled on next boot.
 bridgenet-present:
   cmd.run:
     - name: |
