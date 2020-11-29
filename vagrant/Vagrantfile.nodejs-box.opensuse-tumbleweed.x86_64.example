@@ -40,7 +40,9 @@ Vagrant.configure("2") do |config|
       v.machine_arch = "x86_64"
       v.autostart = false
 
+      override.vm.provision 'shell', run: 'once', inline: 'echo "send host-name \"nodejs-box\";" >> /etc/dhclient.conf', privileged: true
       salt_provision_nodejs_box override
+      override.vm.provision 'reload'
     end
 
     nodejs_box.vm.provider "virtualbox" do |v, override|
