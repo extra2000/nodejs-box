@@ -1,2 +1,3 @@
 .vagrant
-vagrant/Vagrantfile.nodejs-box
+vagrant/*
+!vagrant/examples
