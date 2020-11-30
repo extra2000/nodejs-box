@@ -1,5 +1,41 @@
 # Changelog
 
+## [3.0.0-alpha.4](https://github.com/extra2000/nodejs-box/compare/v3.0.0-alpha.3...v3.0.0-alpha.4) (2020-11-30)
+
+
+### Features
+
+* **bridgenet:** Add support for Arch families ([a7d95cd](https://github.com/extra2000/nodejs-box/commit/a7d95cd4e07dcfca5477e9e866f1fa26bb7ba89c))
+* **podman-formula:** Update to [v2.2.0](https://github.com/extra2000/podman-formula/releases/v2.2.0) ([6c7aeff](https://github.com/extra2000/nodejs-box/commit/6c7aeff52e207e8f62d6477e3b11cf887e5f4344))
+* **vagrant:** Add Arch Linux `x86_64` box ([0a7ba2f](https://github.com/extra2000/nodejs-box/commit/0a7ba2f3473477dec81d7c739a56a481e3c64e16))
+
+
+### Fixes
+
+* **vagrant:** Fix boxes unable to ping other machines ([32c6448](https://github.com/extra2000/nodejs-box/commit/32c644852fa5c165271d14099e0853db3d904662))
+
+
+### Code Refactoring
+
+* **gitignore:** Include vagrant example files only ([7fd77f0](https://github.com/extra2000/nodejs-box/commit/7fd77f020c8f22b6c527f61a520712a054027150))
+* **vagrant:** Move example vagrant files into `vagrant/examples/` directory ([4b951df](https://github.com/extra2000/nodejs-box/commit/4b951df64ca784e7b0aac59a64ad209042f5b184))
+* **vagrant:** Rename KVM and QEMU vagrant files for `aarch64` ([0647a97](https://github.com/extra2000/nodejs-box/commit/0647a971bc156839a343566c4bd5d46b63ef1a43))
+
+
+### Continuous Integrations
+
+* **AppVeyor:** Add `semantic-release` ([a6d894a](https://github.com/extra2000/nodejs-box/commit/a6d894a8ceb5ce77aa166437ed6bd58cdd98bf81))
+* **AppVeyor:** Update vagrant file copying instruction ([3fcd6b6](https://github.com/extra2000/nodejs-box/commit/3fcd6b65d723327099b2186925c9165229ec0c55))
+* **semantic-release:** Write version to `VERSION.txt` ([14943e6](https://github.com/extra2000/nodejs-box/commit/14943e60f9af4f8bd5147d54b250709fb8ab8d21))
+* Remove Travis CI because it is no longer free ([1942f1a](https://github.com/extra2000/nodejs-box/commit/1942f1a0490aadc9141ddf83424bb6e8c3f701de))
+
+
+### Documentations
+
+* **README:** Inform users to `vagrant reload` after `state.highstate` for Arch Linux box ([8b95853](https://github.com/extra2000/nodejs-box/commit/8b958537badcd3edbfa1aa9b36fe3a7382e482ca))
+* **README:** Remove Travis CI badge ([b60eaf5](https://github.com/extra2000/nodejs-box/commit/b60eaf59f841ae9e331c94fd229df2e5f2fac238))
+* **README:** Update `rename example box` instruction ([d40ba65](https://github.com/extra2000/nodejs-box/commit/d40ba653e2942f5bd10ea64fd0815d90bd44f714))
+
 ## [3.0.0-alpha.3](https://github.com/extra2000/nodejs-box/compare/v3.0.0-alpha.2...v3.0.0-alpha.3) (2020-11-08)
 
 
