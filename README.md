@@ -29,8 +29,6 @@ $ vagrant up --provider=libvirt
 $ vagrant ssh nodejs-box -- sudo salt-call state.highstate
 ```
 
-Note for ArchLinux box, bridge networking require `$ vagrant reload` after applying `state.highstate`.
-
 
 ## Sample apps
 
