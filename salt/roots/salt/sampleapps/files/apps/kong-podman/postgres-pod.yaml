@@ -6,18 +6,20 @@ spec:
   restartPolicy: Never
   containers:
   - name: postgres
-    image: docker.io/library/postgres:13.0
+    image: postgres:13.1-alpine
+    command: ['postgres']
     ports:
     - containerPort: 5432
-      hostPort: 5432
-      hostIP: 0.0.0.0
       protocol: tcp
     env:
+    - name: PGDATA
+      value: /var/lib/postgresql/data
     - name: POSTGRES_PASSWORD
       value: abcde12345
     volumeMounts:
-    - mountPath: /docker-entrypoint-initdb.d/initdb.sql:ro,z
+    - mountPath: /docker-entrypoint-initdb.d/initdb.sql
       name: initdb
+      readOnly: true
   volumes:
   - name: initdb
     hostPath:

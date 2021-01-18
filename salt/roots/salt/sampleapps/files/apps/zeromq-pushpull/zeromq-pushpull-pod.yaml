@@ -12,7 +12,6 @@ spec:
     ports:
     - containerPort: 3000
       hostPort: 3000
-      hostIP: 0.0.0.0
       protocol: tcp
   - name: worker
     image: localhost/extra2000/zeromq-pushpull

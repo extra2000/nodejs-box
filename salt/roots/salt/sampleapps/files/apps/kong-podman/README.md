@@ -11,17 +11,17 @@ $ cd /opt/sampleapps/apps/kong-podman
 ## Deploy Postgres
 
 ```
-$ podman play kube postgres-pod.yaml
+$ podman play kube --network=sampleapps postgres-pod.yaml
 ```
 
 Bootstrap Kong database for the first time:
 ```
-$ podman run --rm --pod postgres-pod --volume="./kong.conf:/etc/kong/kong.conf:ro,z" -e "KONG_PG_HOST=localhost" docker.io/library/kong:2.1.4 kong migrations bootstrap
+$ podman run --rm --pod postgres-pod --volume="./kong.conf:/etc/kong/kong.conf:ro,z" -e "KONG_PG_HOST=localhost" docker.io/library/kong:2.3.0 kong migrations bootstrap
 ```
 
 Test to make sure postgres works:
 ```
-$ podman run -it --rm --pod=postgres-pod docker.io/postgres:13.0 psql --host=localhost --username=kong --dbname=kongdb
+$ podman run -it --rm --network=sampleapps docker.io/postgres:13.0 psql --host=postgres-pod.sampleapps --username=kong --dbname=kongdb
 ```
 
 
@@ -29,13 +29,12 @@ $ podman run -it --rm --pod=postgres-pod docker.io/postgres:13.0 psql --host=loc
 
 Start Kong:
 ```
-$ podman play kube kong-pod.yaml
+$ podman play kube --network=sampleapps kong-pod.yaml
 ```
 
 Test Kong and make sure no error, for example:
 ```
-$ curl -i http://localhost:8001
-$ podman run -it --rm docker.io/curlimages/curl curl http://10.77.1.1:8001
+$ podman run -it --rm --network=sampleapps docker.io/curlimages/curl curl http://kong-pod.sampleapps:8001
 ```
 
 
@@ -43,23 +42,25 @@ $ podman run -it --rm docker.io/curlimages/curl curl http://10.77.1.1:8001
 
 ```
 $ podman build -t extra2000/webservice:latest .
-$ podman play kube webservice-pod.yaml
+$ podman play kube --network=sampleapps webservice-pod.yaml
 ```
 
-Test make sure the NodeJS webservice is working:
+Test make sure the NodeJS webservice is working and accessible by `kong`:
 ```
-$ podman run -it --rm --pod=kong-pod docker.io/curlimages/curl curl http://10.77.1.1:10000/api/v1/customers
+$ podman run -it --rm --pod=webservice-pod docker.io/curlimages/curl curl http://localhost:8000/api/v1/customers
+$ podman run -it --rm --pod=kong-pod docker.io/curlimages/curl curl http://webservice-pod.sampleapps:8000/api/v1/customers
 ```
 
 Register NodeJS webservice into Kong and setup routing:
 ```
-$ podman run -it --rm --pod=kong-pod docker.io/curlimages/curl curl -i -X POST --url http://localhost:8001/services/ --data 'name=webservice' --data 'url=http://10.77.1.1:10000'
-$ podman run -it --rm --pod=kong-pod docker.io/curlimages/curl curl -i -X POST --url http://localhost:8001/services/webservice/routes --data 'name=webservice-route' --data 'hosts[]=10.77.1.1'
+$ podman run -it --rm --pod=kong-pod docker.io/curlimages/curl curl -i -X POST --url http://localhost:8001/services/ --data 'name=webservice' --data 'url=http://webservice-pod.sampleapps:8000'
+$ podman run -it --rm --pod=kong-pod docker.io/curlimages/curl curl -i -X POST --url http://localhost:8001/services/webservice/routes --data 'name=webservice-route' --data 'paths[]=/myweb'
 ```
 
 To test:
 ```
-$ podman run -it --rm docker.io/curlimages/curl curl -i -X GET http://10.77.1.1:8000/api/v1/customers --header 'Host: 10.77.1.1'
+$ podman run -it --rm --network=sampleapps docker.io/curlimages/curl curl -i -X GET http://kong-pod.sampleapps:8000/myweb/api/v1/customers
+$ curl -i -X GET http://localhost:8000/myweb/api/v1/customers
 ```
 
 To list services and routes:

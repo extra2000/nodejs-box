@@ -1,7 +1,7 @@
 const kafka = require('kafka-node');
 const bp = require('body-parser');
 
-let kafkaHost = '10.77.1.1:9092';
+let kafkaHost = 'kafka-pod:9092';
 let kafkaTopic = 'testingtopic';
 
 try {

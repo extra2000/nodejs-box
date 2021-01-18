@@ -11,22 +11,22 @@ $ cd /opt/sampleapps/apps/kafka-pubsub
 ## Deploy Kafka pod
 
 ```
-$ podman play kube kafka-pod.yaml
+$ podman play kube --network=sampleapps kafka-pod.yaml
 ```
 
 To test Kafka deployments:
 ```
-$ podman run -it --rm docker.io/bitnami/kafka:2.6.0 /opt/bitnami/kafka/bin/kafka-topics.sh --create --zookeeper 10.77.1.1:2181 --replication-factor 1 --partitions 1 --topic testingtopic
-$ podman run -it --rm docker.io/bitnami/kafka:2.6.0 bash -c 'echo "Hello, World" | /opt/bitnami/kafka/bin/kafka-console-producer.sh --bootstrap-server 10.77.1.1:9092 --topic testingtopic'
-$ podman run -it --rm docker.io/bitnami/kafka:2.6.0 /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server 10.77.1.1:9092 --topic testingtopic --from-beginning
+$ podman run -it --rm --network=sampleapps docker.io/bitnami/kafka:2.6.0 /opt/bitnami/kafka/bin/kafka-topics.sh --create --zookeeper kafka-pod:2181 --replication-factor 1 --partitions 1 --topic testingtopic
+$ podman run -it --rm --network=sampleapps docker.io/bitnami/kafka:2.6.0 bash -c 'echo "Hello, World" | /opt/bitnami/kafka/bin/kafka-console-producer.sh --bootstrap-server kafka-pod:9092 --topic testingtopic'
+$ podman run -it --rm --network=sampleapps docker.io/bitnami/kafka:2.6.0 /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server kafka-pod:9092 --topic testingtopic --from-beginning
 ```
 
 ## Deploy producer and consumer services
 
 ```
 $ podman build -t extra2000/prodcon:latest .
-$ podman play kube producer-pod.yaml
-$ podman play kube consumer-pod.yaml
+$ podman play kube --network=sampleapps producer-pod.yaml
+$ podman play kube --network=sampleapps consumer-pod.yaml
 ```
 
 See logs:

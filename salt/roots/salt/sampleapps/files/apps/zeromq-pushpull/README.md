@@ -5,7 +5,7 @@ $ vagrant ssh nodejs-box -- sudo salt-call state.sls sampleapps
 $ vagrant ssh nodejs-box
 $ cd /opt/sampleapps/apps/zeromq-pushpull
 $ podman build -t extra2000/zeromq-pushpull:latest .
-$ podman play kube zeromq-pushpull-pod.yaml
+$ podman play kube --network=sampleapps zeromq-pushpull-pod.yaml
 ```
 
 View logs:
