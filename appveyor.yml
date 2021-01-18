@@ -16,12 +16,12 @@ build_script:
   - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/math && podman build -t extra2000/mathapp:latest ."
   - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/math && podman run --rm localhost/extra2000/mathapp"
   - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/zeromq-pushpull && podman build -t extra2000/zeromq-pushpull:latest ."
-  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/zeromq-pushpull && podman play kube zeromq-pushpull-pod.yaml"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/zeromq-pushpull && podman play kube --network=sampleapps zeromq-pushpull-pod.yaml"
   - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/zeromq-pushpull && podman pod rm --force --all"
-  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube kafka-pod.yaml"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube --network=sampleapps kafka-pod.yaml"
   - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman build -t extra2000/prodcon:latest ."
-  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube producer-pod.yaml"
-  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube consumer-pod.yaml"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube --network=sampleapps producer-pod.yaml"
+  - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman play kube --network=sampleapps consumer-pod.yaml"
   - sudo vagrant ssh nodejs-box -- "cd /opt/sampleapps/apps/kafka-pubsub && podman pod rm --force --all"
   - sudo vagrant destroy --force nodejs-box
 on_success:
