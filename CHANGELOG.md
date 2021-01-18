@@ -1,5 +1,82 @@
 # Changelog
 
+## [3.0.0](https://github.com/extra2000/nodejs-box/compare/v2.0.1...v3.0.0) (2021-01-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* **salt/roots/salt/sampleapps:** Pillar file structure for `sampleapps` have changed.
+* **vagrant:** Required Vagrant file has been removed and user is required to rename one of the Vagrant file.
+* **vagrant:** HyperV provider has been removed because Fedora 32 doesn't provide official image for HyperV.
+
+### Features
+
+* **bridgenet:** Add support for Arch families ([a7d95cd](https://github.com/extra2000/nodejs-box/commit/a7d95cd4e07dcfca5477e9e866f1fa26bb7ba89c))
+* **podman-formula:** Update to [v2.1.0-alpha.1](https://github.com/extra2000/podman-formula/releases/tag/v2.1.0-alpha.1) ([31bd784](https://github.com/extra2000/nodejs-box/commit/31bd784d8484694fa9eed2a8a214d8d25ce4b4af))
+* **podman-formula:** Update to [v2.2.0](https://github.com/extra2000/podman-formula/releases/v2.2.0) ([6c7aeff](https://github.com/extra2000/nodejs-box/commit/6c7aeff52e207e8f62d6477e3b11cf887e5f4344))
+* **salt:** Add `swapoff` to disable swap ([f212c5e](https://github.com/extra2000/nodejs-box/commit/f212c5e4fac1651164681eaa51523a4e8f75bb0c))
+* **salt.bridgenet:** Add support for Debian, Ubuntu, and SUSE families ([c3c04b8](https://github.com/extra2000/nodejs-box/commit/c3c04b86acdc3222819359735962908cd0d84ab1))
+* **salt/roots/salt/sampleapps:** Update and improve `sampleapps` implementations ([b51bfa9](https://github.com/extra2000/nodejs-box/commit/b51bfa9ad085e0aaecea56a8e548cb107cdc0f99))
+* **vagrant:** Add Arch Linux `x86_64` box ([0a7ba2f](https://github.com/extra2000/nodejs-box/commit/0a7ba2f3473477dec81d7c739a56a481e3c64e16))
+* **vagrant:** Add CentOS 8 `x86_64` box ([3d11556](https://github.com/extra2000/nodejs-box/commit/3d115563bad8fc5070f5ab32360dcfd9ad4714fb))
+* **vagrant:** Add Debian 10 `x86_64` box ([2a58f42](https://github.com/extra2000/nodejs-box/commit/2a58f4282ac85c5013baa0b8d0d341394fd474d1))
+* **vagrant:** Add Fedora 33 `x86_64` box ([6fca967](https://github.com/extra2000/nodejs-box/commit/6fca96768ba37e0ae71dbbbe2d06ed257def5b68))
+* **vagrant:** Add openSUSE Leap 15.2 `aarch64` box ([c087a58](https://github.com/extra2000/nodejs-box/commit/c087a58030c4ff653cc74a8bca9395e84b27f73a))
+* **vagrant:** Add openSUSE Leap 15.2 `aarch64` KVM box ([c7d9c3f](https://github.com/extra2000/nodejs-box/commit/c7d9c3f606dbd5827ec062a527f9e07d846435f1))
+* **vagrant:** Add openSUSE Leap 15.2 `x86_64` box ([f5ba354](https://github.com/extra2000/nodejs-box/commit/f5ba3547b132ac1198fc62f9708efdfd0a5560fe))
+* **vagrant:** Add openSUSE Tumbleweed `aarch64` box ([8067a3c](https://github.com/extra2000/nodejs-box/commit/8067a3c20c57b18a2d97ceba8283963b9404d5a2))
+* **vagrant:** Add openSUSE Tumbleweed `aarch64` KVM box ([47b2e98](https://github.com/extra2000/nodejs-box/commit/47b2e989130d06dd4a1b14c58b0b8f4af8725c96))
+* **vagrant:** Add openSUSE Tumbleweed `x86_64` box ([dd87aa6](https://github.com/extra2000/nodejs-box/commit/dd87aa6300be9b785098d4c666785a474913c917))
+* **vagrant:** Add Ubuntu 20.04 `x86_64` box ([29d9a1a](https://github.com/extra2000/nodejs-box/commit/29d9a1a746acdf01abf97da164e4e23fd7b91358))
+* **vagrant:** Allow user to customize Vagrant box without affecting commit ([f51ec33](https://github.com/extra2000/nodejs-box/commit/f51ec334f929c5aa92b4d51f49f141820369126d))
+* **vagrant:** Change OS from Centos 7 to Fedora 32 which has built-in Podman 2.x ([0a89679](https://github.com/extra2000/nodejs-box/commit/0a896790ae3f80a08c95e682fb4d32e270dc7b89))
+
+
+### Maintenance
+
+* **release:** 3.0.0-alpha.1 [skip ci] ([2776809](https://github.com/extra2000/nodejs-box/commit/2776809d756848e1d043e205962282729b172353))
+* **release:** 3.0.0-alpha.2 [skip ci] ([96a30f4](https://github.com/extra2000/nodejs-box/commit/96a30f4aec8b8543b99db4bad3bbf78ea8eaaeee))
+* **release:** 3.0.0-alpha.3 [skip ci] ([f615ae8](https://github.com/extra2000/nodejs-box/commit/f615ae8b740d1f34d19a97cc7f1959be86df959a))
+* **release:** 3.0.0-alpha.4 [skip ci] ([07049bd](https://github.com/extra2000/nodejs-box/commit/07049bda4bd87bc5c8cea3c919b6da72b9f2ced1))
+
+
+### Code Refactoring
+
+* **gitignore:** Include vagrant example files only ([7fd77f0](https://github.com/extra2000/nodejs-box/commit/7fd77f020c8f22b6c527f61a520712a054027150))
+* **salt:** Remove `bridgenet` and use Podman built-in network ([5a2755f](https://github.com/extra2000/nodejs-box/commit/5a2755fdafc579891c267e7894fa78cc8be1cfc5))
+* **vagrant:** Move example vagrant files into `vagrant/examples/` directory ([4b951df](https://github.com/extra2000/nodejs-box/commit/4b951df64ca784e7b0aac59a64ad209042f5b184))
+* **vagrant:** Rename KVM and QEMU vagrant files for `aarch64` ([0647a97](https://github.com/extra2000/nodejs-box/commit/0647a971bc156839a343566c4bd5d46b63ef1a43))
+
+
+### Fixes
+
+* **sampleapps.kong-podman:** Remove `workingDir` in YAML file ([d476144](https://github.com/extra2000/nodejs-box/commit/d4761449f0d32da3ae5cf197fd660352a28917a2))
+* **vagrant:** Fix boxes unable to ping other machines ([32c6448](https://github.com/extra2000/nodejs-box/commit/32c644852fa5c165271d14099e0853db3d904662))
+* **vagrant:** Standardize SaltStack installations to `v3002.2` and via `git` ([0d9a13f](https://github.com/extra2000/nodejs-box/commit/0d9a13faf6ebb87b9ec339c9a53aa0de89ccd3a7))
+* Remove `:latest` label from YAML files ([aa276a3](https://github.com/extra2000/nodejs-box/commit/aa276a392cd06c89542f1681fbaa069175f24569))
+
+
+### Documentations
+
+* **README:** Add instruction to rename example Vagrant box ([5a08455](https://github.com/extra2000/nodejs-box/commit/5a08455b7c17ad01091c7024e2e55ef937bff078))
+* **README:** Default to Fedora 33 `x86_64` ([559bfba](https://github.com/extra2000/nodejs-box/commit/559bfba28438901854029208de04c21208b2f87b))
+* **README:** Inform users to `vagrant reload` after `state.highstate` for Arch Linux box ([8b95853](https://github.com/extra2000/nodejs-box/commit/8b958537badcd3edbfa1aa9b36fe3a7382e482ca))
+* **README:** Remove Travis CI badge ([b60eaf5](https://github.com/extra2000/nodejs-box/commit/b60eaf59f841ae9e331c94fd229df2e5f2fac238))
+* **README:** Rempve instructions related to `bridgenet` ([9adcce0](https://github.com/extra2000/nodejs-box/commit/9adcce0db0027023e688ab6f23fe4f15ea6c9504))
+* **README:** Rename container name due to Podman 2.x ([d1d8eb2](https://github.com/extra2000/nodejs-box/commit/d1d8eb2117cd6a7b455905718cdc1daf08d632f0))
+* **README:** Update `rename example box` instruction ([d40ba65](https://github.com/extra2000/nodejs-box/commit/d40ba653e2942f5bd10ea64fd0815d90bd44f714))
+
+
+### Continuous Integrations
+
+* **AppVeyor:** Add `--network=sampleapps` arguments to `podman play kube` commands ([36a6d37](https://github.com/extra2000/nodejs-box/commit/36a6d3702532c716885c772ec7decbc7721cfcf9))
+* **AppVeyor:** Add `semantic-release` ([a6d894a](https://github.com/extra2000/nodejs-box/commit/a6d894a8ceb5ce77aa166437ed6bd58cdd98bf81))
+* **AppVeyor:** Remove unnecessary `podman pod rm --force --all` command ([d3c6ad4](https://github.com/extra2000/nodejs-box/commit/d3c6ad4bee9c0f1e0a941ab3db2f54f49ba72eb2))
+* **AppVeyor:** Update vagrant file copying instruction ([3fcd6b6](https://github.com/extra2000/nodejs-box/commit/3fcd6b65d723327099b2186925c9165229ec0c55))
+* **semantic-release:** Write version to `VERSION.txt` ([14943e6](https://github.com/extra2000/nodejs-box/commit/14943e60f9af4f8bd5147d54b250709fb8ab8d21))
+* Add copy Vagrant example file ([95ce63e](https://github.com/extra2000/nodejs-box/commit/95ce63e23fdd5678a6928f7b39c39d52520780cf))
+* Remove Travis CI because it is no longer free ([1942f1a](https://github.com/extra2000/nodejs-box/commit/1942f1a0490aadc9141ddf83424bb6e8c3f701de))
+
 ## [3.0.0-alpha.4](https://github.com/extra2000/nodejs-box/compare/v3.0.0-alpha.3...v3.0.0-alpha.4) (2020-11-30)
 
 
