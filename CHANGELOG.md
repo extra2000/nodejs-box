@@ -1,5 +1,17 @@
 # Changelog
 
+### [3.0.1](https://github.com/extra2000/nodejs-box/compare/v3.0.0...v3.0.1) (2021-01-19)
+
+
+### Documentations
+
+* **README:** Add FOSSA badges ([cc7a3e7](https://github.com/extra2000/nodejs-box/commit/cc7a3e74dd6084275b554842f6fede41b29138cf))
+
+
+### Continuous Integrations
+
+* **AppVeyor:** Upgrade from Ubuntu 18.04 to Ubuntu 20.04 ([825c407](https://github.com/extra2000/nodejs-box/commit/825c40767bf387c1cc385ce3cdccb8a0cc557ad3))
+
 ## [3.0.0](https://github.com/extra2000/nodejs-box/compare/v2.0.1...v3.0.0) (2021-01-18)
 
 
