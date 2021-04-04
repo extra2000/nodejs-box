@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:20.10
 MAINTAINER extra2000 <https://github.com/extra2000>
 
 USER root
