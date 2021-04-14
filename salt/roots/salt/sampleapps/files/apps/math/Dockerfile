@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:groovy-20210325
 MAINTAINER extra2000 <https://github.com/extra2000>
 
 USER root
