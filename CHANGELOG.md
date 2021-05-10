@@ -1,5 +1,59 @@
 # Changelog
 
+## [4.0.0](https://github.com/extra2000/nodejs-box/compare/v3.0.1...v4.0.0) (2021-05-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **salt/roots/pillar/podman.sls:** File `salt/roots/pillar/podman.sls` has been removed.
+* **podman-formula:** Podman formula has major changes that may probably breaks compatibility
+
+### Features
+
+* **pillar/podman.sls.example:** Add example pillar file for Podman formula and add `salt/roots/pillar/podman.sls` into `.gitignore` ([0b6e9ef](https://github.com/extra2000/nodejs-box/commit/0b6e9efc38a98863cb9bfa18f8556e656479b5f1))
+* **podman-formula:** Upgrade from `v2.2.0` to `v4.0.0` ([044b969](https://github.com/extra2000/nodejs-box/commit/044b969592d890c1573c1ab39044114cfefe9549))
+* **sampleapps/files/apps/kafka-pubsub/Dockerfile:** Update NodeJS to `v14.16.1` ([fc60070](https://github.com/extra2000/nodejs-box/commit/fc60070d818ac379c11cd86800a79df75a7ef283))
+* **sampleapps/files/apps/kong-podman/Dockerfile:** Update NodeJS to `14.16.1` ([9aed522](https://github.com/extra2000/nodejs-box/commit/9aed522c4eab15a15c78907a3dbb77c22f17bf43))
+* **sampleapps/files/apps/kong-podman/postgres-pod.yaml:** Remove unnecessary lines and prefix with `docker.io` ([5d8b1aa](https://github.com/extra2000/nodejs-box/commit/5d8b1aa49f9938f66d9b5eb29d75d94047dbfcc0))
+* **vagrant:** Add Vagrant file for Fedora 34 `x86_64` ([6aa5251](https://github.com/extra2000/nodejs-box/commit/6aa5251c1982beb1187662374657403ef4569646))
+* **vagrant:** Upgrade SaltStack to `v3003` ([f022d0f](https://github.com/extra2000/nodejs-box/commit/f022d0fe6ded85b7b7d87610450c9114c51eb39c))
+
+
+### Continuous Integrations
+
+* **AppVeyor:** Add instruction to create Podman pillar file ([80ce08e](https://github.com/extra2000/nodejs-box/commit/80ce08e0bf21212de7119140b11ade2be12402ae))
+* **AppVeyor:** Use Fedora 34 ([be1ef04](https://github.com/extra2000/nodejs-box/commit/be1ef04a96d7a3186244118eec1789343fb3749e))
+
+
+### Styles
+
+* **salt/roots/pillar/sampleapps.sls:** Add header ([ec6c8f0](https://github.com/extra2000/nodejs-box/commit/ec6c8f09dbcc493e818166a4c0e46e04bcfbecee))
+
+
+### Documentations
+
+* **README:** Add instructions to create Podman pillar file ([606722a](https://github.com/extra2000/nodejs-box/commit/606722a66532b7b4e8c969cd5a5b56d42a0fe133))
+* **README:** Change to Fedora 34 ([e49359f](https://github.com/extra2000/nodejs-box/commit/e49359f0997dfcde1d835abcc7b0ffd7bca56cff))
+* **README:** Update descriptions for creating Vagrant box ([f8e9531](https://github.com/extra2000/nodejs-box/commit/f8e95313c5573754d0bff4dc13bbf57411cfa661))
+
+
+### Code Refactoring
+
+* **salt/roots/pillar/podman.sls:** Removed ([6c50b29](https://github.com/extra2000/nodejs-box/commit/6c50b29d19cb74e3dcfa43225fd07c04a1fe2aa5))
+* **sampleapps/files/apps/kafka-pubsub/consumer-pod.yaml:** Remove `workingDir: /srv/project` ([1e1d67d](https://github.com/extra2000/nodejs-box/commit/1e1d67d4e268400cbd0983bcdff21fdcacae059c))
+* **sampleapps/files/apps/kong-podman/webservice-pod.yaml:** Remove work directory line ([89f0016](https://github.com/extra2000/nodejs-box/commit/89f00168daef7faab11f9ee7314170f220e9d0d0))
+* **sampleapps/files/apps/math/Dockerfile:** Simplify Dockerfile and use NodeJS `14.16.1` ([a64def9](https://github.com/extra2000/nodejs-box/commit/a64def92cbaf3ce7197bb79a836f92b16875dfb9))
+* **sampleapps/files/apps/zeromq-pushpull/Dockerfile:** Update NodeJS to `14.16.1` ([b93e33d](https://github.com/extra2000/nodejs-box/commit/b93e33d4d59ab78144d1d639f23bdac3a58829fb))
+
+
+### Fixes
+
+* **ampleapps/files/apps/kafka-pubsub/kafka-pod.yaml:** Remove old workarounds ([7d7f947](https://github.com/extra2000/nodejs-box/commit/7d7f947817f2e1d705f906c36b4a739829dc74c4))
+* **network:** Allow user to override Podman network bridge name to prevent conflicts with other projects ([d759b44](https://github.com/extra2000/nodejs-box/commit/d759b449b5fff251ae7a6dc06dc5f4d927b9a279))
+* **sampleapps/files/apps/kafka-pubsub/producer-pod.yaml:** Remove old workarounds ([b01eff4](https://github.com/extra2000/nodejs-box/commit/b01eff48e01fe129d58ad1626242194468adfe0a))
+* **sampleapps/files/apps/kong-podman/kong-pod.yaml:** Remove command ([0923886](https://github.com/extra2000/nodejs-box/commit/0923886a4ff5ecde96684f12d4d50b443a405c6b))
+* **sampleapps/files/podman-network-sampleapps.conflist.jinja:** Remove hard-coded Podman network name ([12e5c04](https://github.com/extra2000/nodejs-box/commit/12e5c04ad3c69a758394ab6a89f0db2b0ff87741))
+
 ### [3.0.1](https://github.com/extra2000/nodejs-box/compare/v3.0.0...v3.0.1) (2021-01-19)
 
 
