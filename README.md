@@ -28,7 +28,7 @@ Rename example box:
 $ cp -v vagrant/examples/Vagrantfile.nodejs-box.fedora-34.x86_64.example vagrant/Vagrantfile.nodejs-box
 ```
 
-To create devbox and apply required states such as podman and bridge network for inter-pod communications:
+Execute the following command to create Vagrant box and provision the box:
 ```
 $ vagrant up --provider=libvirt
 $ vagrant ssh nodejs-box -- sudo salt-call state.highstate
