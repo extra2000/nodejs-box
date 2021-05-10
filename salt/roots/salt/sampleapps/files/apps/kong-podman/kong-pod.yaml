@@ -7,7 +7,6 @@ spec:
   containers:
   - name: kong
     image: docker.io/library/kong:2.3.0
-    command: ['kong', 'docker-start']
     ports:
     - containerPort: 8000
       hostPort: 8000
