@@ -18,6 +18,11 @@ $ cd nodejs-box
 
 ## Preparing environment
 
+Create pillar files:
+```
+$ cp -v salt/roots/pillar/podman.sls.example salt/roots/pillar/podman.sls
+```
+
 Rename example box:
 ```
 $ cp -v vagrant/examples/Vagrantfile.nodejs-box.fedora-33.x86_64.example vagrant/Vagrantfile.nodejs-box
