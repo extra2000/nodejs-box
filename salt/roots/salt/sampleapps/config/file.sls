@@ -27,8 +27,8 @@
 
 sampleapps-files-present:
   file.recurse:
-    - name: /opt/sampleapps/apps
-    - source: salt://sampleapps/files/apps
+    - name: /opt/sampleapps/nodejs-examples
+    - source: salt://sampleapps/files/nodejs-examples
     - user: {{ SAMPLEAPPS.hostuser.name }}
     - group: {{ SAMPLEAPPS.hostuser.group }}
     - template: jinja
