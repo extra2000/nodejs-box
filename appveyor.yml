@@ -10,7 +10,7 @@ install:
   - git submodule update
 build_script:
   - cp -v salt/roots/pillar/podman.sls.example salt/roots/pillar/podman.sls
-  - cp -v vagrant/examples/Vagrantfile.nodejs-box.fedora-32.x86_64.example vagrant/Vagrantfile.nodejs-box
+  - cp -v vagrant/examples/Vagrantfile.nodejs-box.fedora-34.x86_64.example vagrant/Vagrantfile.nodejs-box
   - sudo vagrant up --provider=libvirt nodejs-box
   - sudo vagrant ssh nodejs-box -- sudo salt-call state.highstate
   - sudo vagrant ssh nodejs-box -- sudo salt-call state.sls sampleapps
