@@ -37,7 +37,9 @@ $ vagrant ssh nodejs-box -- sudo salt-call state.highstate
 
 ## Sample apps
 
-* [salt/roots/salt/sampleapps/files/apps/math/](salt/roots/salt/sampleapps/files/apps/math/)[README.md](salt/roots/salt/sampleapps/files/apps/math/README.md)
-* [salt/roots/salt/sampleapps/files/apps/zeromq-pushpull/](salt/roots/salt/sampleapps/files/apps/zeromq-pushpull/)[README.md](salt/roots/salt/sampleapps/files/apps/zeromq-pushpull/README.md)
-* [salt/roots/salt/sampleapps/files/apps/kafka-pubsub/](salt/roots/salt/sampleapps/files/apps/kafka-pubsub/)[README.md](salt/roots/salt/sampleapps/files/apps/kafka-pubsub/README.md)
-* [salt/roots/salt/sampleapps/files/apps/kong-podman/](salt/roots/salt/sampleapps/files/apps/kong-podman/)[README.md](salt/roots/salt/sampleapps/files/apps/kong-podman/README.md)
+Initializing sample apps:
+```
+$ vagrant ssh nodejs-box -- sudo salt-call state.sls sampleapps
+$ vagrant ssh nodejs-box
+$ cd /opt/sampleapps/nodejs-examples
+```
