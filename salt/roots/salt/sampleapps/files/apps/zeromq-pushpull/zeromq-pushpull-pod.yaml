@@ -8,7 +8,6 @@ spec:
   - name: producer
     image: localhost/extra2000/zeromq-pushpull
     command: ['npm', 'run', 'producer']
-    workingDir: /srv/project
     ports:
     - containerPort: 3000
       hostPort: 3000
@@ -16,4 +15,3 @@ spec:
   - name: worker
     image: localhost/extra2000/zeromq-pushpull
     command: ['npm', 'run', 'worker']
-    workingDir: /srv/project
